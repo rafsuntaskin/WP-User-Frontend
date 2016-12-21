@@ -848,7 +848,7 @@ class WPUF_Render_Form {
         ?>
 
         <?php if ( in_array( $attr['rich'], array( 'yes', 'teeny' ) ) ) { ?>
-            <div class="wpuf-fields wpuf-rich-validation <?php printf( 'wpuf_%s_%s', $attr['name'], $form_id ); ?>" data-type="rich" data-required="<?php echo esc_attr( $attr['required'] ); ?>" data-id="<?php echo esc_attr( $attr['name'] ) . '_' . $form_id; ?>" data-name="<?php echo esc_attr( $attr['name'] ); ?>">
+            <div class="wpuf-fields wpuf-rich-validation <?php printf( 'wpuf_%s_%s', $attr['name'], $form_id ); ?>" data-type="rich" data-required="<?php echo esc_attr( $attr['required'] ); ?>" data-id="<?php echo esc_attr( $attr['name'] ) . '_' . $form_id; ?>" data-name="<?php echo $attr['name'] . '_' . $form_id; ?>">
         <?php } else { ?>
             <div class="wpuf-fields">
         <?php } ?>
@@ -899,7 +899,7 @@ class WPUF_Render_Form {
 
             } else {
                 ?>
-                <textarea class="textareafield<?php echo $this->required_class( $attr ); ?> <?php echo ' wpuf_'.$attr['name'].'_'.$form_id; ?>" id="<?php echo $attr['name'] . '_' . $form_id; ?>" name="<?php echo $attr['name']; ?>" data-required="<?php echo $attr['required'] ?>" data-type="textarea"<?php $this->required_html5( $attr ); ?> placeholder="<?php echo esc_attr( $attr['placeholder'] ); ?>" rows="<?php echo $attr['rows']; ?>" cols="<?php echo $attr['cols']; ?>"><?php echo esc_textarea( $value ) ?></textarea>
+                <textarea class="textareafield<?php echo $this->required_class( $attr ); ?> <?php echo ' wpuf_'.$attr['name'].'_'.$form_id; ?>" id="<?php echo $attr['name'] . '_' . $form_id; ?>" name="<?php echo $attr['name'] . '_' . $form_id; ?>" data-required="<?php echo $attr['required'] ?>" data-type="textarea"<?php $this->required_html5( $attr ); ?> placeholder="<?php echo esc_attr( $attr['placeholder'] ); ?>" rows="<?php echo $attr['rows']; ?>" cols="<?php echo $attr['cols']; ?>"><?php echo esc_textarea( $value ) ?></textarea>
                 <span class="wpuf-wordlimit-message wpuf-help"></span>
             <?php } ?>
             <?php $this->help_text( $attr ); ?>
